@@ -25,8 +25,5 @@ El flujo es:
 
 ## Simulador de Compilación de Firmware
 ```bash
-cd firmware_sim
-mkdir build && cd build
-cmake ..
-cmake --build .
-./telemetry_sim
+g++ main.cpp telemetry.cpp protocol.cpp -o telemetry_sim.exe
+
