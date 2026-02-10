@@ -1,13 +1,38 @@
-# Simulador de Telemetría Embebido (C++ + JS)
+# Simulador de Telemetría Embebido (C++ y JS)
 
-Este proyecto simula un dispositivo embebido que envía datos de telemetría a través de UART.
+La idea general es:
 
-## Características
-- Generador de telemetría tipo firmware en C++
-- Protocolo serie simple con suma de comprobación
-- Panel web mediante API Web Serial (Chrome/Edge)
-- Visualización en tiempo real de temperatura, voltaje, RPM y estado
+✅ Un “firmware” escrito en C++ genera datos como si fueran sensores (temperatura, voltaje, rpm).
+✅ Esos datos se envían como si fueran por UART/Serial, usando un formato de trama (frame) con checksum.
+✅ Un dashboard en JavaScript se conecta a un puerto serial y muestra los datos en tiempo real.
 
+# ¿Qué hace el programa en general?
+
+El programa simula un dispositivo embebido que hace telemetría, como por ejemplo:
+
+un sistema automotriz
+
+un controlador industrial
+
+un sensor IoT
+
+un módulo de monitoreo de baterías
+
+El flujo es:
+
+Generar datos simulados (como sensores)
+
+Convertir esos datos a JSON
+
+Encapsularlos en un frame (protocolo simple)
+
+Enviar el frame por “serial” (aquí es stdout)
+
+El dashboard recibe esos frames
+
+Extrae el JSON y lo parsea
+
+Muestra los valores en pantalla
 ## Simulador de Compilación de Firmware
 ```bash
 cd firmware_sim
