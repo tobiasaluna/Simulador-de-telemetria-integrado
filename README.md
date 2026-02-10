@@ -2,9 +2,9 @@
 
 La idea general es:
 
-✅ Un “firmware” escrito en C++ genera datos como si fueran sensores (temperatura, voltaje, rpm).
-✅ Esos datos se envían como si fueran por UART/Serial, usando un formato de trama (frame) con checksum.
-✅ Un dashboard en JavaScript se conecta a un puerto serial y muestra los datos en tiempo real.
+-✅ Un “firmware” escrito en C++ genera datos como si fueran sensores (temperatura, voltaje, rpm).
+-✅ Esos datos se envían como si fueran por UART/Serial, usando un formato de trama (frame) con checksum.
+-✅ Un dashboard en JavaScript se conecta a un puerto serial y muestra los datos en tiempo real.
 
 # ¿Qué hace el programa en general?
 
